@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.projections import projection_registry
 
 data=pd.read_csv("data2")
 x=np.array(data['x'])
@@ -59,6 +58,9 @@ def grd(x,y):
 
        print(f"c= {c} m= {mc} itter= {i} cost= {mse}")
        plt.plot(x, yperr, c="red", label="predicted line")
+       plt.title("Gradient Descent")
+       plt.xlabel("Feature")
+       plt.ylabel("Dependent value")
        plt.pause(0.01)
 
    plt.show()
@@ -87,6 +89,9 @@ def grd2(x,y):
        plt.scatter(x, y, c="blue", label="actual points")
        print(f"c= {c} m= {mc} itter= {i} cost= {mse}")
        plt.plot(x, yperr, c="red", label="predicted line")
+       plt.title("Gradient Descent")
+       plt.xlabel("Feature")
+       plt.ylabel("Dependent value")
        plt.pause(0.01)
        plt.legend()
 
@@ -94,7 +99,8 @@ def grd2(x,y):
 
 #per=train(x,y)
 #plot2d(x,y,per)
-#grd(x,y)
+
 grd2(x,y)
+grd(x,y)
 
 
